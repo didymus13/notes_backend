@@ -12,7 +12,7 @@ router
   .post(async (req, res, next) => {
     const note = new Note(req.body);
     await note.save();
-    res.statusCode(201).json(note);
+    res.status(201).json(note);
   });
 
 router
