@@ -1,4 +1,8 @@
+require("dotenv").config();
+
 import index from "./routes/index";
+import "./lib/database";
+import notesRouter from "./routes/notes";
 
 var express = require("express");
 var path = require("path");
@@ -18,5 +22,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", index);
 app.use("/users", usersRouter);
+app.use("/notes", notesRouter);
 
 module.exports = app;
